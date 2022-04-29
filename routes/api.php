@@ -20,5 +20,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/costumers', function () {
-    return datatables()->eloquent(Costumer::query())->addColumn('boton','actions')->rawColumn(['boton'])->toJson();
+    return datatables()
+    ->eloquent(Costumer::query())
+    ->addColumn('btn', 'costumer.actions')
+    ->rawColumns(['btn'])
+    ->toJson();
 });

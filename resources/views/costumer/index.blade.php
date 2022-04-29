@@ -34,37 +34,16 @@
                             <table id="table">
                                 <thead >
                                     <tr>
-                                        <th>No</th>
-                                        
+                                        <th>N°</th>
 										<th>Name</th>
 										<th>Email</th>
-									
                                         <th>&nbsp;</th>
                                     </tr>
                                 </thead>
-                                {{-- <tbody>
-                                    @foreach ($costumers as $costumer)
-                                        <tr>
-                                            <td>{{ ++$i }}</td>
-                                            
-											<td>{{ $costumer->name }}</td>
-											<td>{{ $costumer->email }}</td>
-											<td>{{ $costumer->phone }}</td>
-											<td>{{ $costumer->address }}</td>
-
-                                            <td>
-                                                <form action="{{ route('costumers.destroy',$costumer->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('costumers.show',$costumer->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('costumers.edit',$costumer->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
-                                                </form>
-                                            </td>
-                                        </tr>
-                                    @endforeach
-                                </tbody> --}}
                             </table>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -83,7 +62,7 @@
                         { data: 'id' },
                         { data: 'name' },
                         { data: 'email' },
-                        {data:  'boton'},
+                        { data:  'btn'},
                     ]});
         } );
     </script>
