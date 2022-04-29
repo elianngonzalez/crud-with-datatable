@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CostumerController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,3 +24,5 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::resource('costumers', CostumerController::class)->middleware('auth');
+
+Route::resource('products', ProductController::class)->middleware('auth');
