@@ -26,3 +26,14 @@ Route::get('/costumers', function () {
     ->rawColumns(['btn'])
     ->toJson();
 });
+
+Route::get('/costumer/{id}', function ($id) {
+    $costumer = Costumer::find($id);
+    return response()->json($costumer);
+});
+
+Route::delete('/costumer/{id}', function ($id) {
+    $costumer = Costumer::find($id);
+    $costumer->delete();
+    return response()->json(['success' => 'The costumer has been deleted']);
+})->middleware('auth:sanctum');
