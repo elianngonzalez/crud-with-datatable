@@ -1,5 +1,7 @@
 
-    {{-- <a class="btn btn-sm btn-primary " href="{{ route('costumers.show',$id) }}"><i class="fa fa-fw fa-eye"></i> Show</a> --}}
+    
+    {{--  no tengo la minima idea de porque no envia el csrf
+    <a class="btn btn-sm btn-primary " href="{{ route('costumers.show',$id) }}"><i class="fa fa-fw fa-eye"></i> Show</a> --}}
     <form method="POST" style="display: inline-block;" action="{{ route('costumers.destroy',$id) }}">
         <button type="button" onClick='Modal({{$id}})' class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
             show
