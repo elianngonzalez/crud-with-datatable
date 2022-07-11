@@ -32,8 +32,35 @@ Route::get('/costumer/{id}', function ($id) {
     return response()->json($costumer);
 });
 
-Route::delete('/costumer/{id}', function ($id) {
-    $costumer = Costumer::find($id);
-    $costumer->delete();
-    return response()->json(['success' => 'The costumer has been deleted']);
-})->middleware('auth:sanctum');
+
+
+
+Route::post('costumer/create', function (Request $request) {
+        try {
+
+            $costumer = Costumer::create($request->all());
+        
+            return response()->json(['success' => 'costumer creado con exito']);
+
+        } catch (Exception $e) {
+            return response()->json(['error'=>$e]);
+                            
+        };
+
+    
+    });
+
+
+
+Route::post('/costumer/{id}', function ($id) {
+    try {
+
+        $costumer = Costumer::find($id);
+        $costumer->delete();
+        return response()->json(['success' => 'The costumer has been deleted']);
+        
+    } catch (error $error) {
+        return response()->json(['error'=> $error]);
+    };
+});
+//->middleware('auth:sanctum')
